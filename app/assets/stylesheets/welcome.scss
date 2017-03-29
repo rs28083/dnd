@@ -3,5 +3,53 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-    background-color: #DE9A8C;
+    background-color: #DECB8C;
+    color: #8C97DE;
+}
+h1 {
+    font-family: 'Dungeon';
+    letter-spacing: 4px;
+    font-size: 70px;
+    color: #3F4A91;
+}
+a:link, a:active, a:visited, a:hover {
+    color: #8C97DE;
+    font-family: 'Dungeon';
+    font-size: 40px;
+    border: solid 2px black;
+    background-color: #5E5229;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+}
+a:hover {
+    color: #B0B5DE;
+    background-color: #755D2D;
+    padding: 5px;
+}
+a:active{
+    color: #29305E;
+    padding: 0px;
+}
+
+button{
+    background-color: #875BAB;
+    color: #A6E3D7;
+    border: solid 2px black;
+    padding:15px 36px;
+    text-align: center;
+    display: inline-block;
+    font-size: 40px;
+}
+button:active{
+    
+    padding: 14px 35px;
+}
+@font-face {
+    font-family: Dungeon;
+    src: url(/fonts/d1.TTF);
+}
+flr
+{
+    float: right;
 }
