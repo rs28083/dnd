@@ -1,12 +1,15 @@
-<center>Account Creation</center>
+<center><h1>Account Creation</h1></center>
 <center>
+    <div class = 'CCBox'>
     <table>
         <tr>
             <td>
                 <label>Username:</label>
             </td><td>
                 <input type="username"
-                       id="username" />
+                       id="username"
+                       value="username"
+                       onclick="c4();"/>
             </td>
         </tr>
         <tr>
@@ -14,10 +17,32 @@
                 <label>Password:</label>
             </td><td>
                 <input type="password"
-                       id="password"
+                       id="password1"
                        value="secret"
-                                     />
+                       onclick="c2();"  />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label>Reenter Password:</label>
+            </td><td>
+                <input type="password"
+                       id="password2"
+                       value="secret"
+                       onclick="c3();"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type=button>Submit</button>
             </td>
         </tr>
     </table>
+    </div>
+    
 </center>
+
+<a href = '/welcome/index'>Home</a>
+
+<script type="text/javascript" src="/js/main.js"></script>
