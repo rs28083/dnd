@@ -1,31 +1,104 @@
-<h1>Character Creator</h1>
-<table>
-    
-    <td>
-        <label>Strength</label>
-    </td>
-    <tr>
-        <input type = "number"
-            id = "strength"  /> 
-    </tr>
-    
-    <tr>
-        <label>Constitution</label>
-    </tr>
-    <tr>
-        <input type = "number"
-            id = "constitution" />
-    </tr>
-    <tr>
-        
-        <label>Dexterity</label>
-    </tr>
-    <tr>
-        <input type = "number"
-            id = "dexterity"  /> 
-    </tr>
-</table>
 
-            
+<center><h1>Character Creator</h1></center>
+
+<center>
+    <div class='CCBox'>
+    <table>
+       <tr>
+           <td>
+               <label>Strength:</label>
+              </td><td>
+               <input  type="number" max="18" min="3"
+                    id = "str"/>
+           </td>
+           
+           <td>
+                <label>Race:</label>
+                </td><td>
+                <select id='race'>
+                    <option value=0>Dwarf</option>
+                    <option value=1>Elf</option>
+                    <option value=2>Halfling</option>
+                    <option value=3>Human</option>
+                    <option value=4>Dragonborn</option>
+                    <option value=5>Gnome</option>
+                    <option value=6>Half-Elf</option>
+                    <option value=7>Half-Orc</option>
+                    <option value=8>Tiefling</option>
+                </select>
+            </td>
+           
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Dexterity:</label>
+               </td><td>
+                <input  type="number" max="18" min="3"
+                    id = "dex"/>
+           </td>
+           
+           <td>
+                <label>Class:</label>
+                </td><td>
+                <select id='class'>
+                    <option value=0>Barbarian</option>
+                    <option value=1>Bard</option>
+                    <option value=2>Cleric</option>
+                    <option value=3>Druid</option>
+                    <option value=4>Fighter</option>
+                    <option value=5>Monk</option>
+                    <option value=6>Paladin</option>
+                    <option value=7>Ranger</option>
+                    <option value=8>Rogue</option>
+                    <option value=9>Sorcerer</option>
+                    <option value=10>Warlock</option>
+                    <option value=11>Wizard</option>
+                </select>
+            </td>
+           
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Constitution:</label>
+               </td><td>
+                <input  type="number" max="18" min="3"
+                    id = "con"/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Intelligence:</label>
+               </td><td>
+                <input  type="number" max="18" min="3"
+                    id = "int"/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Wisdom:</label>
+               </td><td>
+                <input  type="number" max="18" min="3"
+                    id = "wdm"/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Charisma:</label>
+               </td><td>
+                <input  type="number" max="18" min="3"
+                    id = "chr"/>
+           </td>
+       </tr>
+    
+    </table>
+    <br><br>
+    <button type=button>Submit</button>
+    </div>
+</center>
         
-<a href = /welcome/index>Home</a>
+<a href = '/welcome/index'>Home</a>

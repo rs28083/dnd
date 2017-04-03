@@ -72,4 +72,21 @@ label
     text-align: center;
     vertical-align: middle;
     padding: 0px;
+    font-family:'Dungeon';
+    font-size: 35px;
+}
+.CCBox
+{
+    border: solid #875BAB 5px;
+    display: inline-block;
+    padding: 5px;
+    background-color: #5E5229;
+}
+.CCBox input
+{
+    background-color: #DECB8C;
+}
+.CCBox select
+{
+    background-color: #DECB8C;
 }

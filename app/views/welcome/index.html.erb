@@ -30,7 +30,7 @@
           <input type = "password"
                   id = "thePass"
                   value = "secret"
-                  onclick="clear('thePass','secret');" />
+                  onclick="c1();" />
         
         </td>
     </tr>
@@ -38,7 +38,7 @@
     <table>
     <tr>
         <td>
-            <a href='#' class="nonActiveLink">Sign Up</a>
+            <a href='/register' class='ActiveLink'>Sign Up</a>
         </td>
         <td>
             <a href="#" class='nonActiveLink'>Log In</a>
@@ -56,5 +56,9 @@
         if(str == value){
             document.getElementById(id).value="";
         }
+    }
+    function c1()
+    {
+        clear('thePass','secret');
     }
 </script>
