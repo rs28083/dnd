@@ -29,7 +29,8 @@
           <td>
           <input type = "password"
                   id = "thePass"
-                  value = "secret" />
+                  value = "secret"
+                  onclick="clear('thePass','secret');" />
         
         </td>
     </tr>
@@ -46,7 +47,14 @@
 </table>
 </div>
         
-        
-
-
 <img class="fll" src="/images/beholder_noback.png" alt="beholder" height="400" width="400">
+
+<script>
+    function clear(id,value)
+    {
+        var str = document.getElementById(id).value;
+        if(str == value){
+            document.getElementById(id).value="";
+        }
+    }
+</script>
