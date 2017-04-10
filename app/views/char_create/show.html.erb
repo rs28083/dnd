@@ -1,0 +1,78 @@
+<% statShow = @statString.split(',') 
+    races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
+    classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+%>
+
+
+<div class='CCBox'>
+    <table>
+        <tr>
+            <td>
+                    <label>Label:</label>
+            </td><td>
+                    <%= params["label"] %>
+            </td><td>
+                   <label>Name:</label>
+            </td><td>
+                   <%= params["name"] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Race:</label>
+            </td><td>
+                   <%= races[Integer(params["race"])] %>
+            </td><td>
+               <label>Class:</label>
+            </td><td>
+                   <%= classes[Integer(params["class"])] %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                   <label>Strength:</label>
+            </td><td>
+                   <%= statShow[0] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Dexterity:</label>
+            </td><td>
+                   <%= statShow[1] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Constitution:</label>
+            </td><td>
+                   <%= statShow[2] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Intelligence:</label>
+            </td><td>
+                   <%= statShow[3] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Wisdom:</label>
+            </td><td>
+                   <%= statShow[4] %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   <label>Charisma:</label>
+            </td><td>
+                   <%= statShow[5] %>
+            </td>
+        </tr>
+        
+        
+    </table>
+</div>
+<a href = '/welcome/index'>Home</a>

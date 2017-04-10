@@ -1,6 +1,10 @@
 <center><h1>Account Creation</h1></center>
 <center>
+    <%= SecureRandom.base64(64) %>
+</div>
+    
     <div class = 'CCBox'>
+        <form action="/register" method="post">
     <table>
         <tr>
             <td>
@@ -9,7 +13,19 @@
                 <input type="username"
                        id="username"
                        value="username"
+                       name='username'
                        onclick="c4();"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Email:</label>
+            </td><td>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       onclick="c5();"
+                       value="email"/>
             </td>
         </tr>
         <tr>
@@ -17,7 +33,8 @@
                 <label>Password:</label>
             </td><td>
                 <input type="password"
-                       id="password1"
+                       id="password"
+                       name="password"
                        value="secret"
                        onclick="c2();"  />
             </td>
@@ -28,17 +45,22 @@
                 <label>Reenter Password:</label>
             </td><td>
                 <input type="password"
-                       id="password2"
+                       id="password_confirmation"
+                       name='passwordC'
                        value="secret"
                        onclick="c3();"  />
             </td>
         </tr>
         <tr>
             <td>
-                <button type=button>Submit</button>
+                
             </td>
         </tr>
+        
+        
     </table>
+    <center>  <input type="submit" style='' value='Create Account'/></center>
+    </form>
     </div>
     
 </center>

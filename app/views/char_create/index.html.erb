@@ -2,20 +2,22 @@
 <center><h1>Character Creator</h1></center>
 
 <center>
+    
     <div class='CCBox'>
+        <form action="/char_create" method="post">
     <table>
        <tr>
            <td>
                <label>Strength:</label>
               </td><td>
                <input  type="number" max="18" min="3"
-                    id = "str"/>
+                    id = "str" name = 'str'/>
            </td>
            
            <td>
                 <label>Race:</label>
                 </td><td>
-                <select id='race'>
+                <select id='race' name='race'>
                     <option value=0>Dwarf</option>
                     <option value=1>Elf</option>
                     <option value=2>Halfling</option>
@@ -35,13 +37,13 @@
                 <label>Dexterity:</label>
                </td><td>
                 <input  type="number" max="18" min="3"
-                    id = "dex"/>
+                    id = "dex" name = 'dex'/>
            </td>
            
            <td>
                 <label>Class:</label>
                 </td><td>
-                <select id='class'>
+                <select id='class' name = 'class'>
                     <option value=0>Barbarian</option>
                     <option value=1>Bard</option>
                     <option value=2>Cleric</option>
@@ -64,7 +66,7 @@
                 <label>Constitution:</label>
                </td><td>
                 <input  type="number" max="18" min="3"
-                    id = "con"/>
+                    id = "con" name = 'con'/>
            </td>
        </tr>
        
@@ -73,7 +75,7 @@
                 <label>Intelligence:</label>
                </td><td>
                 <input  type="number" max="18" min="3"
-                    id = "int"/>
+                    id = "int" name = 'int'/>
            </td>
        </tr>
        
@@ -82,7 +84,7 @@
                 <label>Wisdom:</label>
                </td><td>
                 <input  type="number" max="18" min="3"
-                    id = "wdm"/>
+                    id = "wis" name = 'wis'/>
            </td>
        </tr>
        
@@ -91,14 +93,32 @@
                 <label>Charisma:</label>
                </td><td>
                 <input  type="number" max="18" min="3"
-                    id = "chr"/>
+                    id = "cha" name = 'cha'/>
            </td>
        </tr>
-    
-    </table>
-    <br><br>
-    <button type=button>Submit</button>
-    </div>
-</center>
         
+        <tr>
+            <td>
+                <label>Name:</label>
+            </td><td>
+                <input type="text" 
+                    id = "name" name = 'name' />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label>Character Tags:</label>
+            </td><td>
+                <input type = "text"
+                    id = "label" name = 'label' />
+            </td>
+        </tr>
+    </table>
+    
+    <br><br>
+    <input type="submit" value='submit'/>
+    </div>
+    </form>
+</center>
 <a href = '/welcome/index'>Home</a>

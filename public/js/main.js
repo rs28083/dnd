@@ -11,13 +11,16 @@
     }
         function c2()
     {
-        clear('password1','secret');
+        clear('password','secret');
     }
     function c3()
     {
-        clear('password2','secret');
+        clear('password_confirmation','secret');
     }
     function c4()
     {
-        clear('username','username')
+        clear('username','username');
+    }
+    function c5() {
+        clear('email','email');
     }

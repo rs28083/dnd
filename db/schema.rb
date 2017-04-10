@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405151136) do
+ActiveRecord::Schema.define(version: 20170405173238) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "label"
     t.integer  "index"
     t.integer  "userid"
     t.string   "name"
-    t.integer  "class"
+    t.integer  "charclass"
     t.integer  "race"
     t.string   "stats"
     t.datetime "created_at", null: false

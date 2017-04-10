@@ -1,0 +1,2 @@
+class MidController < ApplicationController
+end

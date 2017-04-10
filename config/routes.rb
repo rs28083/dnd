@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   resources :char_create
   resources :register
+  resources :user
   
   root 'welcome#index'
 end
