@@ -1,0 +1,140 @@
+<% statShow = @statString.split(',') 
+    races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
+    classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+%>
+<h1>Edit Character</h1>
+
+
+<center><h1>Character Creator</h1></center>
+
+<center>
+    
+    <div class='CCBox'>
+        <form action="/char_create" method="post">
+    <table>
+       <tr>
+           <td>
+               <label>Strength:</label>
+              </td><td>
+               <input  type="number" value = statShow[0] max="18" min="3"
+                    id = "str" name = 'str'/>
+           </td>
+           
+           <td>
+                <label>Race:</label>
+                </td><td>
+                <select id='race' name='race'>
+                    <option value=0>Dwarf</option>
+                    <option value=1>Elf</option>
+                    <option value=2>Halfling</option>
+                    <option value=3>Human</option>
+                    <option value=4>Dragonborn</option>
+                    <option value=5>Gnome</option>
+                    <option value=6>Half-Elf</option>
+                    <option value=7>Half-Orc</option>
+                    <option value=8>Tiefling</option>
+                </select>
+            </td>
+           
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Dexterity:</label>
+               </td><td>
+                <input  type="number" value = statShow[1] max="18" min="3"
+                    id = "dex" name = 'dex'/>
+           </td>
+           
+           <td>
+                <label>Class:</label>
+                </td><td>
+                <select id='class' name = 'class'>
+                    <option value=0>Barbarian</option>
+                    <option value=1>Bard</option>
+                    <option value=2>Cleric</option>
+                    <option value=3>Druid</option>
+                    <option value=4>Fighter</option>
+                    <option value=5>Monk</option>
+                    <option value=6>Paladin</option>
+                    <option value=7>Ranger</option>
+                    <option value=8>Rogue</option>
+                    <option value=9>Sorcerer</option>
+                    <option value=10>Warlock</option>
+                    <option value=11>Wizard</option>
+                </select>
+            </td>
+           
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Constitution:</label>
+               </td><td>
+                <input  type="number" value = statShow[2] max="18" min="3"
+                    id = "con" name = 'con'/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Intelligence:</label>
+               </td><td>
+                <input  type="number" value = statShow[3] max="18" min="3"
+                    id = "int" name = 'int'/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Wisdom:</label>
+               </td><td>
+                <input  type="number" value = statShow[4] max="18" min="3"
+                    id = "wis" name = 'wis'/>
+           </td>
+       </tr>
+       
+       <tr>
+           <td>
+                <label>Charisma:</label>
+               </td><td>
+                <input  type="number" value = statShow[5] max="18" min="3"
+                    id = "cha" name = 'cha'/>
+           </td>
+       </tr>
+        
+        <tr>
+            <td>
+                <label>Name:</label>
+            </td><td>
+                <input type="text" value =  
+                    id = "name" name = 'name' />
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label>Character Tags:</label>
+            </td><td>
+                <input type = "text"
+                    id = "label" name = 'label' />
+            </td>
+        </tr>
+    </table>
+    
+    <br><br>
+    <input type="submit" value='submit'/>
+    </div>
+    </form>
+</center>
+<a href = '/welcome/index'>Home</a>
+
+
+
+
+
+
+
+
+<%= render 'index' %>
+<%= link_to 'Back', char_create_path %>

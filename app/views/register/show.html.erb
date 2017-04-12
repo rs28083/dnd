@@ -1,1 +1,35 @@
-<%= @hex %>
+<%= @user.username %> <br>
+<%= @hsh.bin_string %>
+
+ <div class = 'CCBox'>
+        <p>Your account has been created</p>
+    <table>
+        <tr>
+            <td>
+                <p>Username: </p>
+            </td>
+            
+            <td>
+                <%= @user.username %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>email: </p>
+            </td>
+            
+            <td>
+                <%= @user.email %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>ID: </p>
+            </td>
+            
+            <td>
+                <%= session[:current_user_id] %>
+            </td>
+        </tr>
+    </table>
+    </div>

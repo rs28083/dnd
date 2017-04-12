@@ -19,18 +19,15 @@ skip_before_action :verify_authenticity_token
     
     def edit
         @character = Character.find(params[:id])
+        render 'edit'
     end
     
     def update 
-        @character = Character.find(params[:id])
-        if @character.update(character_params)
-            redirect_to @Character
-        else
+        
             render 'edit'
-        end
     end
     
-    def delete
+    def destroy
         @character = Character.find(params[:id])
         @character.destroy
         
