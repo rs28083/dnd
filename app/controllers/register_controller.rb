@@ -1,5 +1,4 @@
 class RegisterController < ApplicationController
-    require 'bundler/setup'
     skip_before_action :verify_authenticity_token
     def index
     end
@@ -12,14 +11,15 @@ class RegisterController < ApplicationController
         @pw = params["password"]
         @pw2 = params["passwordC"]
         if @pw == @pw2 then
-           @hsh = PBKDF2.new do |p| 
-                p.password = @pw
-                p.salt = SecureRandom.base64(255)
-                p.iterations = 2
-            end
+          # @hsh = PBKDF2.new do |p| 
+          #      p.password = @pw
+          #      p.salt = SecureRandom.base64(255)
+          #      p.iterations = 2
+          #  end
+          @salt=SecureRandom.base64(255)
+          result = Armor.digest(@pw, @salt)
             @hex = @hsh.hex_string
-            @user = User.create(username: @username, email: @email,password_hash: @hex, password_salt: @hsh.salt)
-            @user.save
+            @user = User.create(username: @username, email: @email,password_hash: @hex, password_salt: @salt)
             session[:current_user_id] = @user.id
             render 'show'
             ##hsh.#bin_string

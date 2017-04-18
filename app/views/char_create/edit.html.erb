@@ -1,4 +1,4 @@
-<% statShow = @statString.split(',') 
+<% statShow = @character.stats.split(',') 
     races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
     classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 %>
@@ -10,13 +10,13 @@
 <center>
     
     <div class='CCBox'>
-        <form action="/char_create" method="post">
+        <form action="/char_create/<%= @character.id %>/upd" method="GET">
     <table>
        <tr>
            <td>
                <label>Strength:</label>
               </td><td>
-               <input  type="number" value = statShow[0] max="18" min="3"
+               <input  type="number" value = '<%= statShow[0]  %>' max="18" min="3"
                     id = "str" name = 'str'/>
            </td>
            
@@ -42,14 +42,14 @@
            <td>
                 <label>Dexterity:</label>
                </td><td>
-                <input  type="number" value = statShow[1] max="18" min="3"
+                <input  type="number" value = '<%= statShow[1]  %>' max="18" min="3"
                     id = "dex" name = 'dex'/>
            </td>
            
            <td>
                 <label>Class:</label>
                 </td><td>
-                <select id='class' name = 'class'>
+                <select id='cclass' name = 'class'>
                     <option value=0>Barbarian</option>
                     <option value=1>Bard</option>
                     <option value=2>Cleric</option>
@@ -71,7 +71,7 @@
            <td>
                 <label>Constitution:</label>
                </td><td>
-                <input  type="number" value = statShow[2] max="18" min="3"
+                <input  type="number" value = '<%= statShow[2]  %>' max="18" min="3"
                     id = "con" name = 'con'/>
            </td>
        </tr>
@@ -80,7 +80,7 @@
            <td>
                 <label>Intelligence:</label>
                </td><td>
-                <input  type="number" value = statShow[3] max="18" min="3"
+                <input  type="number" value = '<%= statShow[3]  %>' max="18" min="3"
                     id = "int" name = 'int'/>
            </td>
        </tr>
@@ -89,7 +89,7 @@
            <td>
                 <label>Wisdom:</label>
                </td><td>
-                <input  type="number" value = statShow[4] max="18" min="3"
+                <input  type="number" value = '<%= statShow[4]  %>' max="18" min="3"
                     id = "wis" name = 'wis'/>
            </td>
        </tr>
@@ -98,7 +98,7 @@
            <td>
                 <label>Charisma:</label>
                </td><td>
-                <input  type="number" value = statShow[5] max="18" min="3"
+                <input  type="number" value = '<%= statShow[5]  %>' max="18" min="3"
                     id = "cha" name = 'cha'/>
            </td>
        </tr>
@@ -107,8 +107,9 @@
             <td>
                 <label>Name:</label>
             </td><td>
-                <input type="text" value =  
-                    id = "name" name = 'name' />
+                <input type="text" 
+                    id = "name" name = 'name'
+                    value='<%= @character.name %>' />
             </td>
         </tr>
         
@@ -117,7 +118,7 @@
                 <label>Character Tags:</label>
             </td><td>
                 <input type = "text"
-                    id = "label" name = 'label' />
+                    id = "label" name = 'label' value='<%= @character.label %>' />
             </td>
         </tr>
     </table>
@@ -129,12 +130,13 @@
 </center>
 <a href = '/welcome/index'>Home</a>
 
+<script>
+function pLoad(){
+    race.selectedIndex = <%= @character.race %>
+    cclass.selectedIndex = <%= @character.charclass %>
+}
+window.onload=pLoad();
+    
+</script>
 
-
-
-
-
-
-
-<%= render 'index' %>
 <%= link_to 'Back', char_create_path %>

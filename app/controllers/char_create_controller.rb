@@ -15,6 +15,7 @@ skip_before_action :verify_authenticity_token
     
     def show 
         @character = Character.find(params[:id])
+        @statString = @character.stats
     end
     
     def edit
@@ -22,15 +23,18 @@ skip_before_action :verify_authenticity_token
         render 'edit'
     end
     
-    def update 
-        
-            render 'edit'
+    def upd
+            @character = Character.find(params[:char_create_id])
+            @statString = @character.stats
+            @character.update_attributes(stats: @statString, race: params["race"],charclass: params["class"], userid: 1, label: params["label"], name: params["name"])
+            render 'show'
     end
     
-    def destroy
-        @character = Character.find(params[:id])
+    def del
+        @character = Character.find(params[:char_create_id])
+        @statString = @character.stats
         @character.destroy
         
-        redirect_to 'welcome/index'
+        redirect_to '/welcome/index'
     end
 end

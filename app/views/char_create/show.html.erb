@@ -1,4 +1,4 @@
-<% statShow = @statString.split(',') 
+<% statShow = @character.stats.split(',') #@statString.split(',') 
     races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
     classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 %>
@@ -10,22 +10,22 @@
             <td>
                     <label>Label:</label>
             </td><td>
-                    <%= params["label"] %>
+                    <%=  @character.label %>
             </td><td>
                    <label>Name:</label>
             </td><td>
-                   <%= params["name"] %>
+                   <%=  @character.name %>
             </td>
         </tr>
         <tr>
             <td>
                    <label>Race:</label>
             </td><td>
-                   <%= races[Integer(params["race"])] %>
+                   <%= races[Integer(@character.race)] %>
             </td><td>
                <label>Class:</label>
             </td><td>
-                   <%= classes[Integer(params["class"])] %>
+                   <%= classes[Integer(@character.charclass)] %>
             </td>
         </tr>
 
@@ -79,16 +79,16 @@
     <tr>
         <td>
             
-            <form method="UPDATE" action="/char_create/">
+            <form method="GET" action="/char_create/<%= @character.id %>/edit">
                 <input type='submit' value="UPDATE">
             </form>
         </td>
         <td>
-          <form method="DELETE" action="/char_create/">
+          <form method="POST" action="/char_create/<%= @character.id %>/del">
               <input type='submit' value="DELETE">
               
           </form>
         </td>
     </tr>
 </table>
-<a href = 'welcome/index'>Home</a>
+<a href = '/welcome/index'>Home</a>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   
-  resources :char_create
+  resources :char_create do
+    post :del
+    get :upd
+  end
   resources :user
   
   resources :register do
