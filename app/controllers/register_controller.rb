@@ -25,6 +25,7 @@ class RegisterController < ApplicationController
             @user = User.create(username: @username, email: @email,password_hash: @hex, password_salt: @salt, userid: 0)
             @user.save
             session[:current_user_id] = @user.id
+            @message = "Your account has been created"
             render 'show'
             ##hsh.#bin_string
             ## /char_create/79/edit
@@ -35,6 +36,7 @@ class RegisterController < ApplicationController
     end
     def login
         #session[:current_user_id] = 1
+        @message="Login Failed"
         @username = params["username"]
         @pw = params["password"]
         @user = User.find_by username: @username
@@ -45,6 +47,7 @@ class RegisterController < ApplicationController
             end
             if @hsh.hex_string == @user.password_hash then
             session[:current_user_id] = @user.id
+            @message = "You have been loged in!"
             end
             render 'show'
     end

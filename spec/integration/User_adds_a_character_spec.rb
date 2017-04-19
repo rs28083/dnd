@@ -32,5 +32,16 @@ feature"User adds a character" do
         select('Dwarf', :from => 'race')
         select('Barbarian', :from => 'class')
         click_button "submit"
+        
+        expect(page).to have_content("18")
+        expect(page).to have_content("17")
+        expect(page).to have_content("16")
+        expect(page).to have_content("15")
+        expect(page).to have_content("14")
+        expect(page).to have_content("13")
+        expect(page).to have_content("Test")
+        expect(page).to have_content("Tester")
+        expect(page).to have_content("Dwarf")
+        expect(page).to have_content("Barbarian")
     end
 end

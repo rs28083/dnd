@@ -25,7 +25,7 @@ skip_before_action :verify_authenticity_token
     
     def upd
             @character = Character.find(params[:char_create_id])
-            @statString = @character.stats
+            @statString = params["str"] + "," + params["dex"] + "," + params["con"] + "," + params["int"] + "," + params["wis"] + "," + params["cha"]
             @character.update_attributes(stats: @statString, race: params["race"],charclass: params["class"], userid: 1, label: params["label"], name: params["name"])
             render 'show'
     end
