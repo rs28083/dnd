@@ -1,16 +1,17 @@
 <title>D&D Assistant</title>
 <center><h1>D&D Assistant</h1></center>
+<input type='hidden' id='user' value='<%= @cuser %>'>
 <center><table>
     <tr>
-        <td><a href = "/CharacterSheets"><h3>Character Sheets</h3></a></td>
+        <td><a href = "/char_create/1/list"><h3>Character Sheets</h3></a></td>
         <td><a href = "/char_create"><h3>Character Creator</h3></a></td>
     </tr>
     <tr>
-        <button type="button">Dice!</button>
+        <button type="button" onclick='poproll()'>Dice!</button>
     </tr>
 </table></center>
 <div class='flr'>
-    <form action='/register/1/login' method="POST">
+    <form action='/register/1/login' method="POST" id='ll'>
 <table>
     <tr>
         <td>
@@ -46,12 +47,30 @@
         </td>
         <td>
             <!-- <a href="/register/login" class='ActiveLink'>Log In</a> --->
-            <input type='submit' value='login'>
+            <input type='submit' value='login' id='login'>
         </td>
     </tr>
 </table>
 </form>
 </div>
+
+<script>
+    function poproll()
+    {
+        window.open('/dice.html')
+    }
+    function onl()
+    {
+        if (user.value == "") {
+        }else{
+        uName.value = user.value;
+        thePass.type = 'hidden';
+        login.value='logout';
+        ll.action = '/register/1/lout'
+        }
+    }
+    window.onload=onl();
+</script>
         
 <img class="fll" src="/images/beholder_noback.png" alt="beholder" height="400" width="400">
 

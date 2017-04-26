@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" media="all" href="/assets/welcome.self-69cc269d10a10a69473444490aec882e68d9935c0760d16260b5e767a3e04d9b.css?body=1" data-turbolinks-track="true">
+    </head>
+    
+    <body>
+        
+        <input type='hidden' min='1' max='3' id='rz' value='1'>
+
+        <input type='button' value='roll' id='dr' onclick='roll3()'>
+        
+        <form action="/char_create/1/dice" method="GET">
+            <input type='hidden' id='dss' name='sides'>
+            <input type='hidden' id='rss' name='roll'>
+            <input type='submit' value='' id='brole' style='visibility: hidden;'>
+        </form>
+        <iframe id='display' style='width:100%;height: 250px'></iframe>
+    </body>
+    <script>
+        var dd = 0;
+        var rr = 1;
+        function dl(val)
+        {
+            dd=val;
+            var id='d'+val;
+            
+        }
+        function roll2()
+        {
+            rr=rz.value;
+            dss.value=dd;
+            rss.value=rr;
+            display.src='/char_create/1/dice?sides='+dd+'&roll='+rr;
+        }
+         function roll3()
+        {
+            rr=rz.value;
+            dss.value=dd;
+            rss.value=rr;
+            display.src='/char_create/1/dice2';
+        }
+        function roll()
+        {
+            rr=rz.value;
+            dss.value=dd;
+            rss.value=rr;
+            brole.click();
+        }
+    </script>
+</html>

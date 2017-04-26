@@ -1,0 +1,10 @@
+<div class="CCBox" style='width:80%'>
+<table>
+<% @characters.each do |character| %> 
+<tr>       
+<td><a style='width:100%' href="/char_create/<%= character.id %>"><%= character.label %></a></td>
+</tr>   
+<% end %> 
+</table>
+</div>
+<a href = '/welcome/index'>Home</a>

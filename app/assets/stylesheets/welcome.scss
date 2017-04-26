@@ -77,7 +77,7 @@ label
 }
 .CCBox
 {
-    border: solid #875BAB 5px;
+    border: solid #BAC4FF 5px;
     display: inline-block;
     padding: 5px;
     background-color: #5E5229;
@@ -102,4 +102,34 @@ label
     width:98%;
     background-color:#6C74AB;
     border: #5C6391 3px solid;
+}
+table input[type=submit]
+{
+    color: #8C97DE;
+    font-family: 'Dungeon';
+    font-size: 50px;
+    border: solid 2px black;
+    background-color: #5E5229;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+}
+table input[type=submit]:hover
+{
+    color: #B0B5DE;
+    background-color: #755D2D;
+    padding: 5px;
+}
+table input[type=submit]:active
+{
+    color: #29305E;
+    padding: 0px;
+}
+.bdr .bdr2 td
+{
+    border-bottom: 3px solid #BAC4FF;
+}
+.bdr tr td
+{
+    padding: 7px;
 }

@@ -1,28 +1,61 @@
 <% statShow = @character.stats.split(',') #@statString.split(',') 
     races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
     classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+    
+    pointAdd = [
+        [0,0,2,0,0,0],
+        [0,2,0,0,0,0],
+        [0,2,0,0,0,0],
+        [1,1,1,1,1,1],
+        [2,0,0,0,0,1],
+        [0,0,0,2,0,0],
+        [0,0,0,0,0,2],
+        [2,0,1,0,0,0],
+        [0,0,0,1,0,2],
+        ]
+        
+    speed = [25,30,25,30,30,25,30,30,30]
+    
+    statMods = [0,0,0,0,0,0]
+    points = [0,0,0,0,0,0]
+    count = 0
+    statShow.each{ |i|
+        c = Integer(i)
+        points[count] = c + pointAdd[Integer(@character.race)][count]
+        if (c % 2 != 0) 
+            c = c - 1
+        end
+        statMods[count] = (c - 10)/2
+        count = count + 1
+    }
+    
+    hpStart = [12,8,8,8,10,8,10,10,8,6,8,6]
+    hp = hpStart[Integer(@character.charclass)] + statMods[2]
 %>
 
 
-<div class='CCBox'>
-    <table>
-        <tr>
+<center><div class='CCBox'>
+    <table class='bdr'>
+        <tr class='bdr2'>
             <td>
-                    <label>Label:</label>
+                   <label>Label:</label>
             </td><td>
-                    <%=  @character.label %>
+                   <%= @character.label %>
+            </td>
+            <td>
+                    <label>Name:</label>
             </td><td>
-                   <label>Name:</label>
-            </td><td>
-                   <%=  @character.name %>
+                    <%=  @character.name %>
             </td>
         </tr>
-        <tr>
+        
+        <tr class='bdr2'>
             <td>
                    <label>Race:</label>
             </td><td>
                    <%= races[Integer(@character.race)] %>
-            </td><td>
+            </td>
+            <td>
                <label>Class:</label>
             </td><td>
                    <%= classes[Integer(@character.charclass)] %>
@@ -33,49 +66,59 @@
             <td>
                    <label>Strength:</label>
             </td><td>
-                   <%= statShow[0] %>
+                   <%= points[0] %>
             </td>
-        </tr>
-        <tr>
+
             <td>
                    <label>Dexterity:</label>
             </td><td>
-                   <%= statShow[1] %>
+                   <%= points[1] %>
             </td>
         </tr>
         <tr>
             <td>
                    <label>Constitution:</label>
             </td><td>
-                   <%= statShow[2] %>
+                   <%= points[2] %>
             </td>
-        </tr>
-        <tr>
+
             <td>
                    <label>Intelligence:</label>
             </td><td>
-                   <%= statShow[3] %>
+                   <%= points[3] %>
             </td>
         </tr>
         <tr>
             <td>
                    <label>Wisdom:</label>
             </td><td>
-                   <%= statShow[4] %>
+                   <%= points[4] %>
+            </td>
+
+            <td>
+                   <label>Charisma:</label>
+            </td><td>
+                   <%= points[5] %>
             </td>
         </tr>
         <tr>
             <td>
-                   <label>Charisma:</label>
+                <label>HP</label>
             </td><td>
-                   <%= statShow[5] %>
+                <%= hp %>
+            </td>
+            
+            <td>
+                <label>Speed</label>
+            </td><td>
+                <%= speed[Integer(@character.race)] %>
             </td>
         </tr>
         
     </table>
     
-</div>
-<table>
+</div></center>
+<center><table>
     <tr>
         <td>
             
@@ -90,5 +133,6 @@
           </form>
         </td>
     </tr>
-</table>
+    
+</table></center>
 <a href = '/welcome/index'>Home</a>

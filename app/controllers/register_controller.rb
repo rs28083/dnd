@@ -7,8 +7,12 @@ class RegisterController < ApplicationController
     ## Admin user: admin 
     ## Admin  pass: dnd_admin
     def create
-        
         @username = params["username"]
+        @TmpUser = User.find_by username: @username
+        if @TmpUser then
+          redirect_to '/welcome/index'
+          return
+        end
         @email = params["email"]
         @pw = params["password"]
         @pw2 = params["passwordC"]
@@ -26,11 +30,14 @@ class RegisterController < ApplicationController
             @user.save
             session[:current_user_id] = @user.id
             @message = "Your account has been created"
+            @usernameDisplay = @user.username
+            @userEmailDisplay = @user.email
             render 'show'
             ##hsh.#bin_string
             ## /char_create/79/edit
         else
             ##redirect / reload page ##session[:current_user_id] = @user.id
+            redirect_to '/welcome/index'
         end
             
     end
@@ -47,9 +54,18 @@ class RegisterController < ApplicationController
             end
             if @hsh.hex_string == @user.password_hash then
             session[:current_user_id] = @user.id
-            @message = "You have been loged in!"
+            @message = "You have been logged in!"
+            @usernameDisplay = @user.username
+            @userEmailDisplay = @user.email
+          else
+            @user=nil
+            @usernameDisplay = ""
             end
             render 'show'
+    end
+    def lout
+      session[:current_user_id] = nil
+      render 'login'
     end
 end
 
