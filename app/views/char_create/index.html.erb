@@ -125,3 +125,16 @@
     </form>
 </center>
 <a href = '/welcome/index'>Home</a>
+
+<script>
+    var selectedValue = 0;
+    var isSelected = 0;
+    function clicked(pid)
+    {
+        if(isSelected == 1) {
+        document.getElementById(pid).value = selectedValue;
+        document.getElementById(pid).onclick = "";
+        isSelected = 0;
+        }
+    }
+</script>

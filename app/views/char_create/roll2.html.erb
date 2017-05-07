@@ -1,0 +1,36 @@
+<table id = 'rolltable'>
+    <tr>
+        <td>
+        <p id='1' onclick='clickme("1");'><%= @rollArray[0] %></p>
+        </td>
+        <td>
+            <p id='2' onclick='clickme("2");'><%= @rollArray[1] %></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+           <p id='3' onclick='clickme("3");'><%= @rollArray[2] %></p>
+        </td>
+        <td>
+            <p id='4' onclick='clickme("4");'><%= @rollArray[3] %></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+           <p id='5' onclick='clickme("5");'><%= @rollArray[4] %></p>
+        </td>
+        <td>
+            <p id='6' onclick='clickme("6");'><%= @rollArray[5] %></p>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function clickme(pid)
+    {
+        var ele = document.getElementById(pid);
+        window.selectedValue = ele.value;
+        window.isSelected = 1;
+        ele.class="clicked";
+    }
+</script>

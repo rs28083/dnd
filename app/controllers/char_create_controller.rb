@@ -8,6 +8,9 @@ skip_before_action :verify_authenticity_token
         @id = 1
         if session[:current_user_id] then
             @id = session[:current_user_id]
+        else
+            redirect_to '/register'
+            return
         end
         @statString = params["str"] + "," + params["dex"] + "," + params["con"] + "," + params["int"] + "," + params["wis"] + "," + params["cha"]
         character_params = { :stats => @statString, :race => params["race"], :charclass => params["class"], :userid => 1, :label => params["label"], :name => params["name"]}
@@ -61,7 +64,7 @@ skip_before_action :verify_authenticity_token
     end
     def dice2()
         @res = charRoll()
-        render 'roll'
+        render 'roll2'
     end
     def diceRoll(sides, num)
         @res = 0
@@ -83,14 +86,8 @@ skip_before_action :verify_authenticity_token
         @rollArray = Array.new()
             $i = 1
             until $i > 6 do 
-                @res2 = rand(18) + 1
-                if @res2 == 1 
-                    @res2 += 2
-                elsif @res2 == 2
-                    @res2 += 1
-                else
-                    @res2 = @res2
-                end
+                @res2 = rand(6) + 1 + rand(6) + 1 + rand(6) + 1
+
             @rollArray.push(@res2)
             $i += 1
             end

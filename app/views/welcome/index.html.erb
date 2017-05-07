@@ -16,7 +16,7 @@
     <tr>
         <td>
             
-          <label>User Name</label>
+          <label id="uun">User Name</label>
          </td><td>
           <input type = "text"
           name="username"
@@ -28,7 +28,7 @@
     <tr>
         <td>
             
-          <label>Password</label>
+          <label id='uup'>Password</label>
           </td>
           <td>
           <input type = "password"
@@ -43,7 +43,7 @@
     <table>
     <tr>
         <td>
-            <a href='/register' class='ActiveLink'>Sign Up</a>
+            <a href='/register' id='sup' class='ActiveLink'>Sign Up</a>
         </td>
         <td>
             <!-- <a href="/register/login" class='ActiveLink'>Log In</a> --->
@@ -67,6 +67,11 @@
         thePass.type = 'hidden';
         login.value='logout';
         ll.action = '/register/1/lout'
+        uName.readOnly = true;
+        uName.style = "background-color:#DECB8C;";
+        uup.innerText='';
+        uun.innerText='Logged in as: ';
+        sup.outerHTML = '';
         }
     }
     window.onload=onl();
