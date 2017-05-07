@@ -1,3 +1,4 @@
+<title>Show Characters</title>
 <% statShow = @character.stats.split(',') #@statString.split(',') 
     races = ["Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
     classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
@@ -36,7 +37,7 @@
 
 <center><div class='CCBox'>
     <table class='bdr'>
-        <tr class='bdr2'>
+        <tr class='text2'>
             <td>
                    <label>Label:</label>
             </td><td>
@@ -62,46 +63,51 @@
             </td>
         </tr>
 
+        <tr class='text2'>
+            <td>
+                   <label>Stats (with mod)</label>
+            </td>
+        </tr>
         <tr>
             <td>
                    <label>Strength:</label>
             </td><td>
-                   <%= points[0] %>
+                   <%= points[0] %> (<%= statMods[0] %>)
             </td>
 
             <td>
                    <label>Dexterity:</label>
             </td><td>
-                   <%= points[1] %>
+                   <%= points[1] %>  (<%= statMods[1] %>)
             </td>
         </tr>
-        <tr>
+        <tr class='text2'>
             <td>
                    <label>Constitution:</label>
             </td><td>
-                   <%= points[2] %>
+                   <%= points[2] %> (<%= statMods[2] %>)
             </td>
 
             <td>
                    <label>Intelligence:</label>
             </td><td>
-                   <%= points[3] %>
+                   <%= points[3] %>     (<%= statMods[3] %>)
             </td>
         </tr>
         <tr>
             <td>
                    <label>Wisdom:</label>
             </td><td>
-                   <%= points[4] %>
+                   <%= points[4] %>  (<%= statMods[4] %>)
             </td>
 
             <td>
                    <label>Charisma:</label>
             </td><td>
-                   <%= points[5] %>
+                   <%= points[5] %>  (<%= statMods[5] %>)
             </td>
         </tr>
-        <tr>
+        <tr class='text2'>
             <td>
                 <label>HP</label>
             </td><td>
@@ -136,3 +142,14 @@
     
 </table></center>
 <a href = '/welcome/index'>Home</a>
+
+<script>
+    
+</script>
+<script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>

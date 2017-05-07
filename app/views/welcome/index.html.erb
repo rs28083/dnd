@@ -80,3 +80,10 @@
 <img class="fll" src="/images/beholder_noback.png" alt="beholder" height="400" width="400">
 
 <script type="text/javascript" src="/js/main.js"></script>
+<script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>

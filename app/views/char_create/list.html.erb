@@ -1,10 +1,19 @@
-<div class="CCBox" style='width:80%'>
+<title>Character List</title>
+<div class="CCBox tbl2">
 <table>
+    <tr><td><div id='hd' style="min-width: 250px; width:92%" href="#"><p>~~~~~~~~~~~~~~~Character List~~~~~~~~~~~~~~~</p></div></td></tr>
 <% @characters.each do |character| %> 
-<tr>       
-<td><a style='width:100%' href="/char_create/<%= character.id %>"><%= character.label %></a></td>
+<tr >       
+<td><a style="min-width: 250px; width:92%" href="/char_create/<%= character.id %>"><%= character.label %></a></td>
 </tr>   
 <% end %> 
 </table>
 </div>
 <a href = '/welcome/index'>Home</a>
+<script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>

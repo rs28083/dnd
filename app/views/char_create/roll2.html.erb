@@ -1,36 +1,50 @@
-<table id = 'rolltable'>
+<html class='rollPageR'>
+<table id = 'rolltable' class='RollBox'>
     <tr>
         <td>
-        <p id='1' onclick='clickme("1");'><%= @rollArray[0] %></p>
+          <input type='button'id='D1' onclick='clickme(this);' value='<%= @rollArray[0] %>'/>
         </td>
         <td>
-            <p id='2' onclick='clickme("2");'><%= @rollArray[1] %></p>
+            <input type='button'id='D2' onclick='clickme(this);' value='<%= @rollArray[1] %>'/>
         </td>
     </tr>
     <tr>
         <td>
-           <p id='3' onclick='clickme("3");'><%= @rollArray[2] %></p>
+           <input type='button'id='D3' onclick='clickme(this);' value='<%= @rollArray[2] %>'/>
         </td>
         <td>
-            <p id='4' onclick='clickme("4");'><%= @rollArray[3] %></p>
+            <input type='button'id='D4' onclick='clickme(this);' value='<%= @rollArray[3] %>'/>
         </td>
     </tr>
     <tr>
         <td>
-           <p id='5' onclick='clickme("5");'><%= @rollArray[4] %></p>
+           <input type='button'id='D5' onclick='clickme(this);' value='<%= @rollArray[4] %>'/>
         </td>
         <td>
-            <p id='6' onclick='clickme("6");'><%= @rollArray[5] %></p>
+            <input type='button'id='D6' onclick='clickme(this);' value='<%= @rollArray[5] %>'/>
         </td>
     </tr>
 </table>
 
 <script>
+   var used = [];
+   window.test='a';
     function clickme(pid)
     {
+        if(window.isSelected == 1) {
+        var pele = document.getElementById(window.selectedID);
+        pele.setAttribute('class','');
+        }
+        var ele = pid;//document.getElementById(pid);
+        parent.parent.selectedValue = ele.value;
+        parent.parent.selectedID = ele.id;
+        parent.parent.isSelected = 1;
+        ele.setAttribute('class','clicked');
+    }
+    function unClick(pid)
+    {
         var ele = document.getElementById(pid);
-        window.selectedValue = ele.value;
-        window.isSelected = 1;
-        ele.class="clicked";
+        ele.setAttribute('class','dclicked');
     }
 </script>
+</html>

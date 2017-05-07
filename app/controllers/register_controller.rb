@@ -53,19 +53,21 @@ class RegisterController < ApplicationController
                 p.iterations = 2
             end
             if @hsh.hex_string == @user.password_hash then
+              
             session[:current_user_id] = @user.id
-            @message = "You have been logged in!"
-            @usernameDisplay = @user.username
-            @userEmailDisplay = @user.email
+            redirect_to '/welcome/index/'
+           # @message = "You have been logged in!"
+            #@usernameDisplay = @user.username
+           # @userEmailDisplay = @user.email
           else
             @user=nil
             @usernameDisplay = ""
             end
-            render 'show'
+            #render 'show'
     end
     def lout
       session[:current_user_id] = nil
-      render 'login'
+      redirect_to '/welcome/index/'
     end
 end
 

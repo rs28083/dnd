@@ -1,3 +1,4 @@
+ <title>Show login</title>
  <div class = 'CCBox'>
         <p><%= @message %></p>
     <table>
@@ -32,3 +33,10 @@
 
     </div>
         <a href = '/welcome/index'>Home</a>
+        <script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>

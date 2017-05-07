@@ -1,57 +1,59 @@
-<html>
-    <head>
-        <link rel="stylesheet" media="all" href="/assets/welcome.self-69cc269d10a10a69473444490aec882e68d9935c0760d16260b5e767a3e04d9b.css?body=1" data-turbolinks-track="true">
-    </head>
-    
-    <body>
-        <input type='button' value='4' id='d4' onclick='dl(4)'>
-        <br>
-        <input type='button' value='6' id='d6' onclick='dl(6)'>
-        <br>
-        <input type='button' value='8' id='d8' onclick='dl(8)'>
-        <br>
-        <input type='button' value='10' id='d10' onclick='dl(10)'>
-        <br>
-        <input type='button' value='12' id='d12' onclick='dl(12)'>
-        <br>
-        <input type='button' value='20' id='d20' onclick='dl(20)'>
-        <br>
-        <p>Num of Die: </p>
-        <input type='number' min='1' max='20' id='rz' value='1'>
+<div class = 'diceHtml'>
+    <html>
+        <head>
+            <link rel="stylesheet" media="all" href="/assets/welcome.self-69cc269d10a10a69473444490aec882e68d9935c0760d16260b5e767a3e04d9b.css?body=1" data-turbolinks-track="true">
+        </head>
         
-        <br>
-        <input type='button' value='roll' id='dr' onclick='roll2()'>
-        
-        <form action="/char_create/1/dice" method="GET">
-            <input type='hidden' id='dss' name='sides'>
-            <input type='hidden' id='rss' name='roll'>
-            <input type='submit' value='' id='brole' style='visibility: hidden;'>
-        </form>
-        <iframe id='display' style='width:100%;height: 300px'></iframe>
-    </body>
-    <a href = '/welcome/index'>Home</a>
-    <script>
-        var dd = 0;
-        var rr = 1;
-        function dl(val)
-        {
-            dd=val;
-            var id='d'+val;
+        <body>
+            <input type='button' value='d4' id='d4' onclick='dl(4)'>
+                <br>
+            <input type='button' value='d6' id='d6' onclick='dl(6)'>
+                <br>
+            <input type='button' value='d8' id='d8' onclick='dl(8)'>
+                <br>
+            <input type='button' value='d10' id='d10' onclick='dl(10)'>
+                <br>
+            <input type='button' value='d12' id='d12' onclick='dl(12)'>
+                <br>
+            <input type='button' value='d20' id='d20' onclick='dl(20)'>
+                <br>
+            <label style="color: #3F4A91">Number of Dice: </label>
+            <input type='number' min='1' max='20' id='rz' value='1'>
             
-        }
-        function roll2()
-        {
-            rr=rz.value;
-            dss.value=dd;
-            rss.value=rr;
-            display.src='/char_create/1/dice?sides='+dd+'&roll='+rr;
-        }
-        function roll()
-        {
-            rr=rz.value;
-            dss.value=dd;
-            rss.value=rr;
-            brole.click();
-        }
-    </script>
-</html>
+                <br>
+            <input type='button' value='roll' id='dr' onclick='roll2()'>
+            
+            <form action="/char_create/1/dice" method="GET">
+                <input type='hidden' id='dss' name='sides'>
+                <input type='hidden' id='rss' name='roll'>
+                <input type='submit' value='' id='brole' style='visibility: hidden;'>
+            </form>
+            <iframe id='display' style='width:100%;height: 300px'></iframe>
+        </body>
+        <a href = '/welcome/index'>Home</a>
+        <script>
+            var dd = 0;
+            var rr = 1;
+            function dl(val)
+            {
+                dd=val;
+                var id='d'+val;
+                
+            }
+            function roll2()
+            {
+                rr=rz.value;
+                dss.value=dd;
+                rss.value=rr;
+                display.src='/char_create/1/dice?sides='+dd+'&roll='+rr;
+            }
+            function roll()
+            {
+                rr=rz.value;
+                dss.value=dd;
+                rss.value=rr;
+                brole.click();
+            }
+        </script>
+    </html>
+</div>

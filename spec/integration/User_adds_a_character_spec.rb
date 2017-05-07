@@ -19,6 +19,15 @@ feature"User adds a character" do
     end
 
     scenario "User successfully creates a new character" do
+        visit '/welcome/index'
+        click_on "Sign Up"
+        fill_in "username", with: 'tester1'
+        fill_in "email", with: 'tester@gmail.com'
+        fill_in "password", with: 'tester1'
+        fill_in "passwordC", with: 'tester1'
+        click_on "Create Account"
+        click_on "Home"
+        
         visit '/char_create'
         expect(page).to have_content("Character Creator")
         fill_in "str", with: "18"
@@ -35,7 +44,7 @@ feature"User adds a character" do
         
         expect(page).to have_content("18")
         expect(page).to have_content("17")
-        expect(page).to have_content("16")
+        expect(page).to have_content("18")
         expect(page).to have_content("15")
         expect(page).to have_content("14")
         expect(page).to have_content("13")

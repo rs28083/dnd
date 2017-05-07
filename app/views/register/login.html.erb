@@ -1,3 +1,11 @@
+<title>Login</title>
 <p>You have logged out</p>
 <br>
 <a href="/welcome/index">Home</a>
+<script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>

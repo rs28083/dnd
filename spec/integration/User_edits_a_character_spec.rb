@@ -2,6 +2,15 @@ require 'rails_helper.rb'
 
 feature"User edits and deletes a character" do
     scenario "User creates a character then updates" do
+        visit '/welcome/index'
+        click_on "Sign Up"
+        fill_in "username", with: 'tester1'
+        fill_in "email", with: 'tester@gmail.com'
+        fill_in "password", with: 'tester1'
+        fill_in "passwordC", with: 'tester1'
+        click_on "Create Account"
+        click_on "Home"
+        
         visit '/char_create'
         expect(page).to have_content("Character Creator")
         fill_in "str", with: "18"
@@ -15,7 +24,7 @@ feature"User edits and deletes a character" do
         select('Dwarf', :from => 'race')
         select('Barbarian', :from => 'class')
         click_button "submit"
-        click_button "UPDATE"
+        click_on "UPDATE"
         fill_in "str", with: "17"
         fill_in "dex", with: "16"
         fill_in "con", with: "15"
@@ -29,7 +38,7 @@ feature"User edits and deletes a character" do
         click_button "submit"
         
         expect(page).to have_content("17")
-        expect(page).to have_content("16")
+        expect(page).to have_content("18")
         expect(page).to have_content("15")
         expect(page).to have_content("14")
         expect(page).to have_content("13")
@@ -40,7 +49,17 @@ feature"User edits and deletes a character" do
         expect(page).to have_content("Wizard")
     end
     scenario "User creates a character then deletes" do
-         visit '/char_create'
+        
+        visit '/welcome/index'
+        click_on "Sign Up"
+        fill_in "username", with: 'tester1'
+        fill_in "email", with: 'tester@gmail.com'
+        fill_in "password", with: 'tester1'
+        fill_in "passwordC", with: 'tester1'
+        click_on "Create Account"
+        click_on "Home"
+        
+        visit '/char_create'
         expect(page).to have_content("Character Creator")
         fill_in "str", with: "18"
         fill_in "dex", with: "17"
@@ -53,7 +72,7 @@ feature"User edits and deletes a character" do
         select('Dwarf', :from => 'race')
         select('Barbarian', :from => 'class')
         click_button "submit"
-        click_button "DELETE"
+        click_on "DELETE"
         expect(page).to have_content("D&D Assistant")
     end
     

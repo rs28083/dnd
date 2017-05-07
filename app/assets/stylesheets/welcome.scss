@@ -22,7 +22,7 @@ a:link, a:active, a:visited, a:hover {
     margin: 15px;
     padding: 15px;
 }
-a:hover {
+/*a:hover {
     color: #B0B5DE;
     background-color: #755D2D;
     padding: 5px;
@@ -31,7 +31,7 @@ a:active{
     color: #29305E;
     padding: 0px;
 }
-
+*/
 button{
     background-color: #875BAB;
     color: #A6E3D7;
@@ -43,7 +43,7 @@ button{
     font-family: 'Dungeon';
 }
 button:active{
-    padding: 14px 35px;
+  //  padding: 14px 35px;
 }
 @font-face {
     font-family: Dungeon;
@@ -118,7 +118,7 @@ table input[type=submit]:hover
 {
     color: #B0B5DE;
     background-color: #755D2D;
-    padding: 5px;
+   //padding: 5px;
 }
 table input[type=submit]:active
 {
@@ -145,5 +145,96 @@ table input[type=submit]:active
 }
 .clicked
 {
-    color: red;
+    color: #2838AA;
+}
+.dclicked
+{
+    color: gray;
+}
+.IFBox
+{
+   color: #DECB8C;
+}
+.IFBox
+{
+  border: 5px solid #5C6391;
+
+}
+.rollPageR body
+{
+    background-color: #5E5229;
+    overflow: hidden;
+}
+.text2
+{
+    color: #A742AA;
+}
+.CCBox tr:nth-child(even){color: #A742AA;}
+.CCBox tr:nth-child(odd){color: #8C97DE;}
+
+.RollBox input[type=button]
+{
+    width:100%;
+    background-color:#6C74AB;
+    border: #0A027C 3px solid;
+    margin: 2px;
+    padding: 10px;
+}
+.RollBox
+{
+    overflow: hidden;
+}
+#hd{
+        color: #8C97DE;
+    font-family: 'Dungeon';
+    font-size: 50px;
+    border: solid 2px black;
+    //background-color: #5E5229;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+}
+//td:nth-child(2n+3){background: #CCC}
+//#8C97DE;
+//tr:nth-child(even) {background: #CCC}
+//tr:nth-child(odd) {background: #FFF}
+.tbl2  a:link, a:active, a:visited, a:hover {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+}
+.tbl2 tr:first-child div
+{
+    background-color: #875BAB;
+    //#A6E3D7
+}
+.tbl2 tr:nth-child(even) a
+{
+    background-color: #3F4A91;
+}
+.tbl2 tr:nth-child(odd) a
+{
+    background-color: #A742AA;
+}
+.tbl2 tr:nth-child(even) a:hover
+{
+    background-color: #6071DD;
+}
+.tbl2 tr:nth-child(odd) a:hover
+{
+    background-color: blue;
+}
+
+.diceHtml input[type=button] {
+    background-color: #875BAB;
+    color: #A6E3D7;
+    border: solid 2px black;
+    padding: 15px 36px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Dungeon';
+}
+.diceHtml input[type=button] a:hover {
+    padding: 10px 30px;
 }

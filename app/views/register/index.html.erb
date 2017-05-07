@@ -1,3 +1,4 @@
+<title>Account Creation</title>
 <center><h1>Account Creation</h1></center>
 <center>
 </div>
@@ -67,3 +68,10 @@
 <a href = '/welcome/index'>Home</a>
 
 <script type="text/javascript" src="/js/main.js"></script>
+<script>
+    function unTitle()
+    {
+        document.getElementsByTagName('title')[0].outerHTML = "";
+    }
+    window.onload=unTitle();
+</script>
